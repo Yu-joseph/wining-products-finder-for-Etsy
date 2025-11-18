@@ -1,4 +1,3 @@
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -8,8 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 import pandas as pd
 import time
 
-# import re
-# # webdriver = webdriver.current_url("https:://google.com")
+# # webdriver = webdriver.current_url("https:://etsy.com")
 # # argv  = sys.argv
 # i = 1
 # # string = ""
@@ -38,7 +36,6 @@ def search_etsy(keyword):
     )
     time.sleep(2)
 
-    # Collect product cards
     products = driver.find_elements(By.CSS_SELECTOR, "li.wt-list-unstyled")
     results = []
 
@@ -51,7 +48,6 @@ def search_etsy(keyword):
             product_link = link_el.get_attribute("href")
 
             try:
-                #storing store name and link
                 store_el = p.find_element(By.CSS_SELECTOR, "p.wt-text-caption a")
                 store_name = store_el.text.strip()
                 store_link = store_el.get_attribute("href")
@@ -60,7 +56,6 @@ def search_etsy(keyword):
                 store_link = "N/A"
 
             try:
-                # trying to count the ffedback
                 feedback_el = p.find_element(By.CSS_SELECTOR, "span.wt-text-body-smaller")
                 feedback_text = feedback_el.text.strip().replace("(", "").replace(")", "")
                 feedback_count = int(feedback_text) if feedback_text.isdigit() else 0
@@ -97,7 +92,6 @@ if __name__ == "__main__":
 
 
 
-# import re
 # # webdriver = webdriver.current_url("https:://google.com")
 # # argv  = sys.argv
 # i = 1
