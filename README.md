@@ -100,4 +100,7 @@ This tool is for educational and research purposes only. Please respect Etsy's T
 
 ## License
 
-MIT License - Feel free to modify and use for your needs.
+Feel free to modify and use for your needs.
+- add more pages
+- add filter for shops
+- add sells etc ..
